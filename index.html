@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>BTS Army Countdown</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Cuenta regresiva para el próximo anuncio oficial de BTS. El regreso que ARMY está esperando." />
+  <meta name="keywords" content="BTS, BTS comeback, BTS announcement, BTS 2026, Army"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BTS Army Countdown" />
+  <meta property="og:description" content="Cuenta regresiva para el próximo anuncio oficial de BTS. Hora local automática." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://TU-DOMINIO-AQUI.com" />
+  <meta property="og:image" content="https://wallpapers.com/images/high/bts-stage-4606-x-2957-wallpaper-7p8evyju6gcgwmp6.webp" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BTS Army Countdown" />
+  <meta name="twitter:description" content="Cuenta regresiva para el próximo anuncio oficial de BTS." />
+  <meta name="twitter:image" content="https://wallpapers.com/images/high/bts-stage-4606-x-2957-wallpaper-7p8evyju6gcgwmp6.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://TU-PROYECTO.vercel.app/" />
+
+
+  <style>
+    :root {
+      --accent: #b388ff;
+      --glass-bg: rgba(15, 15, 25, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+    }
+
+    body {
+      background-image: url('https://wallpapers.com/images/high/bts-stage-4606-x-2957-wallpaper-7p8evyju6gcgwmp6.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10,10,20,0.65),
+        rgba(10,10,20,0.9)
+      );
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      width: 100%;
+      padding: 42px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      animation: reveal 1.2s ease-out forwards;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+        filter: blur(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    header {
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.7;
+    }
+
+    .divider {
+      width: 120px;
+      height: 2px;
+      margin: 24px 0 32px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+      );
+    }
+
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px 12px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .time-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(179,136,255,0.25);
+    }
+
+    .number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      animation: softPulse 3.2s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0% { opacity: 0.9; }
+      50% { opacity: 1; }
+      100% { opacity: 0.9; }
+    }
+
+    .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      opacity: 0.65;
+      margin-top: 6px;
+    }
+
+    .status {
+      margin-top: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 0.85; }
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 0.75rem;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 30px;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <header>
+    <h1>BTS Army Countdown</h1>
+    <div class="subtitle">
+      Próximo anuncio oficial · Hora local automática
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="description">
+    BTS se prepara para revelar su siguiente gran paso como grupo completo.
+    Este contador marca el momento exacto del anuncio que definirá la nueva era.
+  </div>
+
+  <section class="countdown">
+    <div class="time-box">
+      <div id="days" class="number">--</div>
+      <div class="label">Días</div>
+    </div>
+    <div class="time-box">
+      <div id="hours" class="number">--</div>
+      <div class="label">Horas</div>
+    </div>
+    <div class="time-box">
+      <div id="minutes" class="number">--</div>
+      <div class="label">Minutos</div>
+    </div>
+    <div class="time-box">
+      <div id="seconds" class="number">--</div>
+      <div class="label">Segundos</div>
+    </div>
+  </section>
+
+  <div id="status" class="status"></div>
+
+  <footer>
+    Evento ajustado automáticamente según tu zona horaria
+  </footer>
+</main>
+
+<script>
+  const eventDateUTC = new Date("2026-01-13T15:00:00Z");
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+  const statusEl = document.getElementById("status");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = eventDateUTC - now;
+
+    if (diff <= 0) {
+      daysEl.textContent = "0";
+      hoursEl.textContent = "0";
+      minutesEl.textContent = "0";
+      secondsEl.textContent = "0";
+      statusEl.textContent = "El anuncio ya ha comenzado.";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = days;
+    hoursEl.textContent = hours;
+    minutesEl.textContent = minutes;
+    secondsEl.textContent = seconds;
+
+    statusEl.textContent =
+      days > 1
+        ? `Faltan ${days} días`
+        : days === 1
+        ? "Falta 1 día"
+        : "El anuncio es hoy";
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
